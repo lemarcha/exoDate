@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-demo(titrePage=~{:: title}, contenuPage=~{:: main}, ressourcesSupp=~{:: #ressources-css})}">
+    <head>
+        <th:block id="ressources-css">
+            <link rel="stylesheet" type="text/css" href="/css/demo-form.css"/>
+        </th:block>
+        <title>Démo Spring Web - Détail du formateur</title>
+    </head>
+    <body>
+        <main>
+            <!-- Intégration des deux formulaires du formateur -->
+            <div data-th-replace="~{fragments/fragment-formateur-detail :: frag-formateur-form(action='/formateurs/detail', fragListeDesCours=~{fragments/fragment-liste-cours-lecture :: frag-liste-cours})}"></div>
+<!--            <div data-th-replace="~{fragments/fragment-cours-form :: frag-cours-form}"></div>-->
+        </main>
+    </body>
+</html>

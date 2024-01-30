@@ -1,0 +1,16 @@
+<form ) data-th-fragment="frag-cours-form" action="/formateurs/cours" method="post">
+    <h1>Ajout d'un cours au formateur</h1>
+    <ul class="flex-outer">
+        <input type="hidden" name="email" data-th-value="${formateur.email}" readonly/>
+        <li>
+            <label for="selectCours">Cours : </label>
+            <select id="selectCours" name="idCours">
+                <option data-th-each="item : ${coursSession}" data-th-text="${item.id + ' - '+ item.titre}"
+                        data-th-value="${item.id}"></option>
+            </select>
+        </li>
+        <li>
+            <button type="submit">Enregistrer</button>
+        </li>
+    </ul>
+</form>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      data-th-replace="~{layouts/layout-contexte :: layout-contexte(titrePage=~{:: title}, contenuPage=~{:: main})}">
+    <head>
+        <title>Demo Spring Boot App - Session & Request</title>
+    </head>
+    <body>
+        <main class="center-main">
+            <section class="center-section">
+                <h1 style="text-align:center" data-th-text="${'Attribut(utilisateur) en scope session : '+ utilisateurSession.pseudo}"></h1>
+                <h1 style="text-align:center" data-th-text="${'Attribut(utilisateur) en scope requête : '+ utilisateurRequest.pseudo}"></h1>
+            </section>
+        </main>
+    </body>
+</html>

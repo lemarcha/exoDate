@@ -1,0 +1,16 @@
+<form data-th-fragment="frag-cours-form" action="/films/genres" method="post">
+    <h1>Création d'un film [En cours de construction]</h1>
+    <ul class="flex-outer">
+        <input type="hidden" name="id" readonly/>
+        <li>
+            <label for="selectGenres">Genres : </label>
+            <select id="selectGenres" name="idGenres">
+                <option data-th-each="item : ${genresSession}" data-th-text="${item.id + ' - '+ item.titre}"
+                        data-th-value="${item.id}"></option>
+            </select>
+        </li>
+        <li>
+            <button type="submit">Enregistrer</button>
+        </li>
+    </ul>
+</form>

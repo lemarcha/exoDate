@@ -1,0 +1,30 @@
+<form xmlns:th="http://www.thymeleaf.org"
+      data-th-fragment="frag-formateur-form(action, fragListeDesCours)"
+      data-th-object="${formateur}"
+      data-th-action="@{${action}}"
+      method="post">
+    <h1>Détail du formateur</h1>
+    <div data-th-replace="~{fragments/fragment-errors :: frag-errors}"></div>
+    <ul class="flex-outer">
+        <li>
+            <label for="inputPrenom">Prénom :</label>
+            <input type="text" name="prenom" id="inputPrenom" data-th-field="*{prenom}" required/>
+            <ul data-th-replace="~{fragments/fragment-error :: frag-error(fieldName='prenom')}"></ul>
+        </li>
+        <li>
+            <label for="inputNom">Nom :</label>
+            <input type="text" name="nom" id="inputNom" data-th-field="*{nom}" required/>
+            <ul data-th-replace="~{fragments/fragment-error :: frag-error(fieldName='nom')}"></ul>
+        </li>
+        <li>
+            <label for="inputEmail">Email :</label>
+            <input type="text" name="email" id="inputEmail" data-th-field="*{email}" data-th-readonly="${#strings.contains(action, 'detail')}"  required/>
+            <ul data-th-replace="~{fragments/fragment-error :: frag-error(fieldName='email')}"></ul>
+        </li>
+        <!-- Ajout de la liste des cours du formateur -->
+        <li data-th-replace="${fragListeDesCours}"></li>
+        <li>
+            <button type="submit">Enregistrer</button>
+        </li>
+    </ul>
+</form>

@@ -1,0 +1,4 @@
+<li xmlns:th="http://www.thymeleaf.org" data-th-fragment="frag-liste-cours">
+    <label>Cours : </label>
+    <li data-th-each="item : ${formateur.listeCours}" data-th-text="${item.id + ' - ' + item.titre}"></li>
+<li>

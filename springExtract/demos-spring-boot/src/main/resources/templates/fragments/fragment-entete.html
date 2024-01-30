@@ -1,0 +1,12 @@
+<!-- Navbar -->
+<header xmlns:th="http://www.thymeleaf.org" data-th-fragment="frag-entete(nav)">
+    <h1 id="nav-title">
+        <a href="/" data-th-text="#{frag-entete.h1}"></a>
+        <div>
+            <a href="/?lang=fr"><img alt="FR" src="/images/French.webp"/></a>
+            <a href="/?lang=en"><img alt="EN" src="/images/English.webp"/></a>
+        </div>
+    </h1>
+    <!-- Intégration dynamique de la barre de nav -->
+    <nav data-th-replace="${nav}"></nav>
+</header>

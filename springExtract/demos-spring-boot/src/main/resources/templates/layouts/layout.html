@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" data-th-fragment="layout-demo(titrePage, contenuPage, ressourcesSupp)">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="/images/logoENI.png" sizes="32x32"/>
+        <link rel="stylesheet" type="text/css" href="/css/general.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+        <th:block data-th-replace="${ressourcesSupp} ?: ~{}"></th:block>
+        <title data-th-replace="${titrePage}"></title>
+    </head>
+    <body>
+        <!--  Intégration du fragment entete   -->
+        <div data-th-replace="~{fragments/fragment-entete :: frag-entete(nav=~{fragments/fragment-navigation :: frag-nav})}"></div>
+
+        <!--  Intégration de la variable "contenu principal"   -->
+        <main data-th-replace="${contenuPage} ?: ~{}"></main>
+
+        <!--  Intégration du fragment entete   -->
+        <div data-th-replace="~{fragments/fragment-piedpage :: frag-piedpage}"></div>
+    </body>
+</html>

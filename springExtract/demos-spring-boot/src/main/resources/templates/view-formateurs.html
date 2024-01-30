@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-demo(titrePage=~{:: title}, contenuPage=~{:: main}, ressourcesSupp=~{:: #ressources-css})}">
+    <head>
+        <th:block id="ressources-css">
+            <link rel="stylesheet" type="text/css" href="/css/demo-table.css"/>
+        </th:block>
+        <title>Démo Spring Web - Liste des formateurs</title>
+    </head>
+    <body>
+        <main>
+            <h1>Les formateurs de l'ENI-Ecole</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-th-each="item, iter : ${listeFormateurs}">
+                        <td data-th-text="${iter.index + 1}"></td>
+                        <td data-th-text="${item.prenom}">${item.prenom}</td>
+                        <td data-th-text="${item.nom}"></td>
+                        <td data-th-text="${item.email}"></td>
+                        <td><a data-th-href="@{/formateurs/detail(email=${item.email})}">Détail</a> </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </main>
+    </body>
+</html>

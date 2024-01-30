@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-demo(titrePage=~{:: title}, contenuPage=~{:: main}, ressourcesSupp=~{:: #ressources-css})}">
+    <head>
+        <th:block id="ressources-css">
+            <link rel="stylesheet" type="text/css" href="/css/demo-form.css"/>
+            <link rel="stylesheet" type="text/css" href="/css/demo-error.css"/>
+        </th:block>
+        <title>Démo Spring Web - Création d'un nouveau formateur</title>
+    </head>
+    <body>
+        <main>
+            <!-- Intégration des deux formulaires du formateur -->
+            <div data-th-replace="~{fragments/fragment-formateur-detail :: frag-formateur-form(action='/formateurs/creer', fragListeDesCours=~{fragments/fragment-liste-cours-form :: frag-liste-cours})}"></div>
+            <!--            <div data-th-replace="~{fragments/fragment-cours-form :: frag-cours-form}"></div>-->
+        </main>
+    </body>
+</html>

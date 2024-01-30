@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/exoDateStyle.css"/>
+    <title>Gestionnaire de personne</title>
+</head>
+<body>
+<h1 style="color:red" data-th-text="${erreur}"/>
+<div class="container">
+<form data-th-action="@{/personne}" data-th-object="${personne}" method="post" class="form">
+    <li>
+        <label for="inputPrenom">Prénom :</label>
+        <input type="text" id="inputPrenom" data-th-field="*{prenom}" required/>
+        <span data-th-if="${#fields.hasErrors('prenom')}" data-th-errors="*{prenom}"/>
+    </li>
+    <li>
+        <label for="inputNom">Nom :</label>
+        <input type="text" id="inputNom" data-th-field="*{nom}" required/>
+        <span data-th-if="${#fields.hasErrors('nom')}" data-th-errors="*{nom}"/>
+    </li>
+    <li>
+        <label for="inputDdn">Date de naissance :</label>
+        <input type="date" id="inputDdn" data-th-field="*{ddn}" required/>
+        <span data-th-if="${#fields.hasErrors('ddn')}" data-th-errors="*{ddn}"/>
+    </li>
+
+    <input type ="submit" value="ajouter"/>
+</form>
+<div class="container_personne">
+    <p data-th-each="personne : ${lstPersonnes}"  class="personne">
+        <span data-th-text="${personne.idPersonne}"/>
+        <span data-th-text="${personne.nom}"/>
+        <span data-th-text="${personne.prenom}"/>
+        <span data-th-text="${#temporals.format(personne.ddn, 'dd/MM/yyyy')}"/>
+    </p>
+
+</div>
+</div>
+<div class="resultat">
+    <h2>Personnes qui ont un anniversaires dans moins de un mois</h2>
+    <p data-th-each="personne : ${lstAnniversairePersonnes}"  class="personne">
+        <span data-th-text="${personne.idPersonne}"/>
+        <span data-th-text="${personne.nom}"/>
+        <span data-th-text="${personne.prenom}"/>
+        <span data-th-text="${#temporals.format(personne.ddn, 'dd/MM/yyyy')}"/>
+    </p>
+</div>
+
+</body>
+</html>
