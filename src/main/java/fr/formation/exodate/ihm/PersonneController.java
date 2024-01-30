@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -22,9 +23,14 @@ public class PersonneController {
     PersonneService service;
 
     @ModelAttribute("lstPersonnes")
-    private List<Personne> getListContacts(){
+    private List<Personne> getListPersonnes(){
         return service.getAllPersonnes();
     }
+
+//    @ModelAttribute("lstAnniversairePersonnes")
+//    private List<Personne> getListAnniversairePersonnes(){
+//        return service.compareDatePersonne( Personne personne, LocalDate ddn);
+//    }
 
     @GetMapping
     public String init(Personne personne) {

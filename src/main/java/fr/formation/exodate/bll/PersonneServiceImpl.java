@@ -5,6 +5,7 @@ import fr.formation.exodate.dal.PersonneDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -22,8 +23,8 @@ public class PersonneServiceImpl implements PersonneService{
         return dao.getAll();
     }
 
-    @Override
-    public List<Personne> compareDatePersonne(Personne personne) {
-        return dao.compareDate();
-    }
+//    @Override
+//    public List<Personne> compareDatePersonne(Personne personne, LocalDate ddn) {
+//        return dao.compareDate();
+//    }
 }

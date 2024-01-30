@@ -8,6 +8,7 @@ import java.util.List;
 public interface PersonneDAO {
     public void ajouterPersonne(Personne personne);
     public List<Personne> getAll();
-    public List<Personne> compareDate();
+//    public List<Personne> compareDate();
+
 
 }

@@ -45,10 +45,10 @@ public class PersonneDAOImpl implements PersonneDAO{
         return jdbcTemplate.query("SELECT id_personne, nom, prenom, ddn FROM PERSONNE", rowMapper);
     }
 
-    @Override
-    public List<Personne> compareDate() {
-        return null;
-    }
+//    @Override
+//    public List<Personne> compareDate() {
+//        return null;
+//    }
 
 
 }

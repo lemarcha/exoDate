@@ -2,6 +2,7 @@ package fr.formation.exodate.bll;
 
 import fr.formation.exodate.bo.Personne;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface PersonneService {
@@ -9,5 +10,5 @@ public interface PersonneService {
 
     public List<Personne> getAllPersonnes();
 
-    List<Personne> compareDatePersonne(Personne personne);
+//    List<Personne> compareDatePersonne(Personne personne, LocalDate ddn);
 }
